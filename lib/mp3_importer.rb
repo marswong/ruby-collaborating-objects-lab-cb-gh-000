@@ -1,21 +1,11 @@
 class MP3Importer
-  attr_accessor :path
-  @@files = []
+  attr_accessor :path, :files
 
   def initialize(path)
     if Dir.exist?(path)
       @path = path
-      puts "start"
-      puts Dir.entries(path)
-      puts "end"
-      Dir.entries(path).each do |filename|
-        self.files << filename if filename.end_with?(".mp3")
-      end
+      @files = Dir.entries(path).select { |filename| filename.end_with?(".mp3") }
     end
-  end
-
-  def files
-    @@files
   end
 
   def import
