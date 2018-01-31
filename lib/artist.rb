@@ -16,7 +16,12 @@ class Artist
   end
 
   def save
-    self.class.all << self
+    index = self.class.all.index { |artist| artist.name == self.name }
+    if index
+      self.class.all[index].songs << self.songs
+    else
+      self.class.all << self            
+    end
   end
 
   def self.find_or_create_by_name(name)
