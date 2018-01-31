@@ -20,7 +20,7 @@ class Artist
     if index
       self.class.all[index].songs << self.songs
     else
-      self.class.all << self            
+      self.class.all << self
     end
   end
 
