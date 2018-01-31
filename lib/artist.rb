@@ -16,7 +16,7 @@ class Artist
   end
 
   def save
-    self.class.all << self if !self.class.all.index { |artist| artist.name = self.name }
+    self.class.all << self if !self.class.all.index { |artist| artist.name == self.name }
   end
 
   def self.find_or_create_by_name(name)
