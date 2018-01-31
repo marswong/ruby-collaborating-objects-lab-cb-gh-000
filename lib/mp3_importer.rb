@@ -4,9 +4,9 @@ class MP3Importer
 
   def initialize(path)
     if Dir.exist?(path)
+      @path = path
+      Dir.entries(path).select { |filename| filename.end_with?(".mp3") }
     end
-    @path = path
-    
   end
 
   def files
