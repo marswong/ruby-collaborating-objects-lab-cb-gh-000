@@ -3,10 +3,13 @@ class MP3Importer
   @@files = []
 
   def initialize(path)
-    @path = path    
+    if Dir.exist?(path)
+    end
+    @path = path
+    
   end
 
   def files
-    @@files    
+    @@files
   end
 end
