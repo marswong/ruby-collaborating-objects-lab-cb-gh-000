@@ -9,6 +9,7 @@ class Song
     arr = filename.split(" - ")
     song = self.class.new(arr[1])
     artist = Artist.new(arr[0])
+    artist.save
     song.artist = artist
     song
   end
