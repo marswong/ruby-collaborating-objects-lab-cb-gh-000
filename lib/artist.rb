@@ -4,6 +4,7 @@ class Artist
 
   def initialize(name)
     @name = name
+    @songs = []
   end
 
   def add_song(song)
@@ -19,10 +20,9 @@ class Artist
   end
 
   def find_or_create_by_name(name)
-    self.all.index { |obj| obj.name == name } || self.class.new(name)
+    self.all.index { |artist| artist.name == name } || self.class.new(name)
   end
 
   def print_songs
-    self.all.each { |k, v| puts v }
   end
 end
