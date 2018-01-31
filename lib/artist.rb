@@ -16,11 +16,11 @@ class Artist
   end
 
   def save
-    self.all << self
+    self.class.all << self
   end
 
   def self.find_or_create_by_name(name)
-    self.all.index { |artist| artist.name == name } || self.class.new(name)
+    self.class.all.index { |artist| artist.name == name } || self.class.new(name)
   end
 
   def print_songs
