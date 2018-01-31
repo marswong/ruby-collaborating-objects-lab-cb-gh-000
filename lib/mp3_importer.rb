@@ -7,16 +7,12 @@ class MP3Importer
     if Dir.exist?(path)
       @path = path
       Dir.entries(path).each do |filename|
-        self.files << filename if filename.end_with?(".mp3")        
+        self.files << filename if filename.end_with?(".mp3")
       end
     end
   end
 
   def files
     @@files
-  end
-
-  def self.all
-    @all
   end
 end
