@@ -1,5 +1,6 @@
 class MP3Importer
   attr_accessor :path
+  @@all = []
   @@files = []
 
   def initialize(path)
@@ -13,5 +14,9 @@ class MP3Importer
 
   def files
     @@files
+  end
+
+  def self.all
+    @all
   end
 end
