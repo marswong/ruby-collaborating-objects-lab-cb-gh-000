@@ -10,5 +10,6 @@ class Song
     song = self.class.new(arr[1])
     artist = Artist.new(arr[0])
     song.artist = artist
+    song
   end
 end
